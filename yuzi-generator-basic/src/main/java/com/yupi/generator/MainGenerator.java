@@ -14,17 +14,16 @@ import java.io.IOException;
 public class MainGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
 //        1 静态文件的生成
-        String property = System.getProperty("user.dir");
-        String inputPath = property + File.separator + "test" + File.separator + "acm-template";
+        String systemPath = System.getProperty("user.dir");
+        String inputPath = systemPath + File.separator + "testMy" + File.separator + "acm-template";
 
-        String outputPath = property + File.separator + "myacm";
+        String outputPath = systemPath + File.separator + "myacm";
 
         File inputFile = new File(inputPath);
         File outputFile = new File(outputPath);
 //        将文件夹进行拷贝
         StaticGenerator.copyFileByUseRecursive(inputFile, outputFile);
 //        2 动态文件的生成
-        String systemPath = System.getProperty("user.dir") + File.separator + "yuzi-generator-basic";
 //        得到模板生成器的路径
         String templatePath = systemPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
 //        得到输出路径，将动态替换的内容进行输出

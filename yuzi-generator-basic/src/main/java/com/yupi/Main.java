@@ -1,5 +1,7 @@
 package com.yupi;
 
+import com.yupi.cli.command.CommandExecutor;
+
 /**
  * @author 不是下雨天
  * @create 2024-01-09 15:35
@@ -7,6 +9,11 @@ package com.yupi;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        //        args = new String[]{""};
+//        args = new String[]{"config"};
+//        args = new String[]{"gen","-l","-a","-o"};
+//        args = new String[]{"gen","-a"};
+        CommandExecutor commandExecutor  =new CommandExecutor();
+        commandExecutor.doExecute(args);
     }
 }

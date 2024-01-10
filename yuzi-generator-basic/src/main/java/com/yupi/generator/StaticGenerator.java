@@ -2,6 +2,7 @@ package com.yupi.generator;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ArrayUtil;
+import sun.nio.cs.UTF_8;
 
 import java.io.File;
 import java.io.IOException;

@@ -13,9 +13,17 @@ import java.io.IOException;
  */
 public class MainGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
-//        1 静态文件的生成
+
+
+    }
+
+    //   以上使用Main方法，生成代码
+    public static void doGenerator(Object data) throws IOException, TemplateException {
+//        打开的项目是： yuzi-generator-basic
+        //   1 静态文件的生成
         String systemPath = System.getProperty("user.dir");
-        String inputPath = systemPath + File.separator + "testMy" + File.separator + "acm-template";
+        String parentPath = new File(systemPath).getParentFile().getAbsolutePath();
+        String inputPath = parentPath + File.separator + "yuzi-generator-demo-project/acm-template";
 
         String outputPath = systemPath + File.separator + "myacm";
 
@@ -29,13 +37,6 @@ public class MainGenerator {
 //        得到输出路径，将动态替换的内容进行输出
         String doutputPath = outputPath + File.separator + "acm-template/src/com/yupi/acm/MainTemplate.java";
 //
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("bushi");
-        mainTemplateConfig.setLoop(false);
-        mainTemplateConfig.setOutputText("输出结果是但是发生的: ");
-
-        DynamicGenerator.doGenerator(templatePath, doutputPath, mainTemplateConfig);
-
+        DynamicGenerator.doGenerator(templatePath, doutputPath, data);
     }
-//   以上使用Main方法，生成代码
 }
